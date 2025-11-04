@@ -1,0 +1,21 @@
+{
+  "name": "Food Finder",
+  "short_name": "FoodFinder",
+  "description": "Find fast food & restaurants near you",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#ff5e62",
+  "theme_color": "#ff5e62",
+  "icons": [
+    {
+      "src": "https://files.catbox.moe/bldf53.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://files.catbox.moe/bldf53.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

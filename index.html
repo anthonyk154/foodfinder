@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Food Finder 🍔</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+  <!-- PWA + iOS Home Screen Support -->
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#ff5e62">
+
+<!-- iOS-specific -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Food Finder">
+<link rel="apple-touch-icon" href="icon-192.png">
+
+<!-- iPhone splash background -->
+<meta name="background-color" content="#ff5e62">
+</head>
+<body>
+  <header>
+    <h1>🍕 Food Finder</h1>
+    <p>Find restaurants & fast food near you</p>
+  </header>
+
+   <main>
+    <main>
+<div class="search-box">
+  <input type="text" id="zip" placeholder="Enter ZIP code (optional)" />
+  <input type="text" id="keyword" placeholder="Search by name (e.g. McDonald's)" />
+  <button id="findBtn">Find Food</button>
+
+<button id="locBtn" class="loc-fab">📍</button>
+</div>
+
+
+
+  <div class="filter-bar">
+    <button class="filter active" data-cat="catering.restaurant">🍽️ All</button>
+    <button class="filter" data-cat="catering.fast_food">🍔 Fast Food</button>
+    <button class="filter" data-cat="catering.pizza">🍕 Pizza</button>
+    <button class="filter" data-cat="catering.cafe">☕ Café</button>
+    <button class="filter" data-cat="catering.sushi">🍣 Sushi</button>
+    <button class="filter" data-cat="catering.mexican">🌮 Mexican</button>
+    <button class="filter" data-cat="catering.italian">🍝 Italian</button>
+  </div>
+
+  <div class="view-toggle">
+    <button id="listViewBtn" class="active">🧾 List</button>
+    <button id="mapViewBtn">🗺️ Map</button>
+  </div>
+
+  <div id="results"></div>
+  <div id="map" style="display:none;"></div>
+</main>
+
+</main>
+
+
+  <footer>© 2025 Food Finder by Anthony</footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="script.js"></script>
+<script>
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker
+      .register("service-worker.js")
+      .then(() => console.log("✅ Service Worker registered"))
+      .catch((err) => console.log("SW registration failed:", err));
+  }
+</script>
+</body>
+</html>
